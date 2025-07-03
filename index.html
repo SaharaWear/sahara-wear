@@ -3,159 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sahara Wear - Iniciar Sesión</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <title>Sahara Wear</title>
   <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      background-color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
     }
-
-    .login-container {
+    header {
+      background: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      border-bottom: 1px solid #ddd;
+    }
+    .icono {
+      font-size: 1.5rem;
+      cursor: pointer;
+      margin-left: 1rem;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
       width: 100%;
       max-width: 400px;
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
       text-align: center;
     }
-
-    .login-container h2 {
-      font-weight: 600;
+    .modal-content h2 {
+      margin-bottom: 1rem;
       font-size: 24px;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
     }
-
-    .login-container p {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 25px;
-    }
-
-    .login-container input {
+    .modal-content input {
       width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
       border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 14px;
+      border-radius: 5px;
     }
-
-    .login-container button {
+    .modal-content button {
       width: 100%;
-      padding: 12px;
-      background-color: #111;
-      color: #fff;
+      background-color: black;
+      color: white;
+      padding: 1rem;
       border: none;
-      border-radius: 4px;
-      font-weight: bold;
+      margin-top: 1rem;
       cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .login-container button:hover {
-      background-color: #333;
-    }
-
-    .login-options {
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
-      margin-top: 10px;
-    }
-
-    .login-options a {
-      color: #999;
-      text-decoration: none;
-    }
-
-    .login-options a:hover {
-      text-decoration: underline;
-    }
-
-    .register {
-      margin-top: 15px;
-      font-size: 13px;
-    }
-
-    .register a {
-      color: #333;
-      text-decoration: none;
       font-weight: bold;
     }
-
-    .icon {
-      font-size: 50px;
-      color: #111;
-      margin-bottom: 10px;
+    .modal-content p {
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      color: #555;
+    }
+    .close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
+  <header>
+    <span class="icono" id="openLogin">👤</span>
+  </header>
 
-  <div class="login-container">
-    <i class="fas fa-user-circle icon"></i>
-    <h2>INICIAR SESIÓN</h2>
-    <p>Escribe tu correo electrónico y contraseña para iniciar sesión:</p>
-    <input type="email" id="email" placeholder="Correo electrónico" />
-    <input type="password" id="password" placeholder="Contraseña" />
-    
-    <div class="login-options">
-      <div></div>
-      <a href="#">¿Olvidaste la contraseña?</a>
-    </div>
+  <main>
+    <!-- Aquí va el contenido normal de tu página -->
+    <h1 style="text-align:center; margin-top: 4rem;">Bienvenida a Sahara Wear</h1>
+  </main>
 
-    <button onclick="login()">INICIAR SESIÓN</button>
-    
-    <div class="register">
-      ¿No tienes una cuenta? <a href="#">Registro</a>
+  <!-- Modal Login -->
+  <div class="modal" id="loginModal">
+    <div class="close" id="closeModal">&times;</div>
+    <div class="modal-content">
+      <h2>INICIAR SESIÓN</h2>
+      <p>Escribe tu correo electrónico y contraseña para iniciar sesión:</p>
+      <input type="email" placeholder="Correo electrónico" id="email" />
+      <input type="password" placeholder="Contraseña" id="password" />
+      <div style="text-align: right; font-size: 0.8rem; color: #777;">
+        ¿Olvidaste la contraseña?
+      </div>
+      <button>INICIAR SESIÓN</button>
+      <p>¿No tienes una cuenta? <strong style="color:#444;">Registro</strong></p>
     </div>
   </div>
 
-  <script type="module">
-    // Firebase config (personalízalo con tus datos reales)
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+  <script>
+    const modal = document.getElementById("loginModal");
+    const openBtn = document.getElementById("openLogin");
+    const closeBtn = document.getElementById("closeModal");
 
-    const firebaseConfig = {
-      apiKey: "TU_API_KEY",
-      authDomain: "sahara-wear.firebaseapp.com",
-      projectId: "sahara-wear",
-      storageBucket: "sahara-wear.appspot.com",
-      messagingSenderId: "555135188662",
-      appId: "1:555135188662:web:85bd56a1de51d533d8897"
-    };
+    openBtn.addEventListener("click", () => {
+      modal.style.display = "flex";
+    });
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
 
-    window.login = () => {
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-
-      signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          alert("Inicio de sesión exitoso");
-          // Redirige o muestra contenido según tu lógica
-        })
-        .catch((error) => {
-          alert("Error: " + error.message);
-        });
-    };
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
   </script>
-
 </body>
 </html>
