@@ -30,10 +30,21 @@
       width: 100%;
       padding: 15px 30px;
       display: flex;
-      justify-content: flex-end;
-      gap: 20px;
+      justify-content: space-between;
+      align-items: center;
       background-color: #fff;
       border-bottom: 1px solid #ddd;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #111;
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 20px;
     }
 
     .icon-button {
@@ -43,12 +54,19 @@
     }
 
     .login-container {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 100%;
       max-width: 400px;
       padding: 40px;
       border-radius: 8px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      background: white;
       text-align: center;
+      z-index: 999;
     }
 
     .login-container h2 {
@@ -115,16 +133,29 @@
       text-decoration: none;
       font-weight: bold;
     }
+
+    .close-login {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      color: #999;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <i class="fas fa-shopping-cart icon-button" title="Carrito"></i>
-    <i class="fas fa-user-circle icon-button" title="Iniciar sesión"></i>
+    <div class="logo">Sahara Wear</div>
+    <div class="header-icons">
+      <i class="fas fa-shopping-cart icon-button" title="Carrito"></i>
+      <i class="fas fa-user-circle icon-button" title="Iniciar sesión" onclick="mostrarLogin()"></i>
+    </div>
   </header>
 
-  <div class="login-container">
+  <div class="login-container" id="loginContainer">
+    <span class="close-login" onclick="cerrarLogin()">&times;</span>
     <h2>INICIAR SESIÓN</h2>
     <p>Escribe tu correo electrónico y contraseña para iniciar sesión:</p>
     <input type="email" id="email" placeholder="Correo electrónico" />
@@ -169,6 +200,14 @@
         .catch((error) => {
           alert("Error: " + error.message);
         });
+    };
+
+    window.mostrarLogin = () => {
+      document.getElementById("loginContainer").style.display = "block";
+    };
+
+    window.cerrarLogin = () => {
+      document.getElementById("loginContainer").style.display = "none";
     };
   </script>
 
