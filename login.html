@@ -2,31 +2,130 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Iniciar sesión - Sahara Wear</title>
+  <title>Iniciar Sesión | Sahara Wear</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #555;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+
+    h2 {
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      font-weight: normal;
+      color: #444;
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #777;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      font-size: 15px;
+    }
+
+    .forgot {
+      text-align: right;
+      font-size: 13px;
+      margin-bottom: 20px;
+      color: #999;
+    }
+
+    .forgot:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    button {
+      width: 100%;
+      background: #111;
+      color: white;
+      padding: 14px;
+      border: none;
+      font-size: 15px;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #222;
+    }
+
+    .register {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #aaa;
+    }
+
+    .register a {
+      color: #999;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .register a:hover {
+      text-decoration: underline;
+    }
+
+    #mensaje {
+      margin-top: 10px;
+      font-size: 13px;
+      color: red;
+    }
+  </style>
 </head>
 <body>
-  <h1>Iniciar sesión</h1>
-  <form onsubmit="login(); return false;">
-    <input type="email" id="email" placeholder="Correo" required><br>
-    <input type="password" id="password" placeholder="Contraseña" required><br>
-    <button type="submit">Ingresar</button>
-  </form>
-  <p id="mensaje"></p>
+  <div class="container">
+    <h2>INICIAR SESIÓN</h2>
+    <p>Escribe tu correo electrónico y contraseña para iniciar sesión:</p>
+    <input type="email" id="email" placeholder="Correo electrónico" />
+    <input type="password" id="password" placeholder="Contraseña" />
+    <div class="forgot">¿Olvidaste la contraseña?</div>
+    <button onclick="login()">INICIAR SESIÓN</button>
+    <div class="register">
+      ¿No tienes una cuenta? <a href="#">Registro</a>
+    </div>
+    <div id="mensaje"></div>
+  </div>
 
-  <!-- Firebase App (SDK) -->
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js"></script>
 
   <script>
-    // Configuración de Firebase
     const firebaseConfig = {
-      apiKey: "AIzaSyDFDRc-_4nnGwqa6lMN-eXQ_ZhbjOB_EBd4",
-      authDomain: "sahara-wear.firebaseapp.com",
+      apiKey: "TU_API_KEY",
+      authDomain: "TU_AUTH_DOMAIN",
       projectId: "sahara-wear",
-      storageBucket: "sahara-wear.appspot.com",
-      messagingSenderId: "555135188662",
-      appId: "1:555135188662:web:85bd56a1de51d533d8897"
+      storageBucket: "TU_BUCKET",
+      messagingSenderId: "TU_SENDER_ID",
+      appId: "TU_APP_ID"
     };
+
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
 
@@ -36,13 +135,15 @@
       const mensaje = document.getElementById("mensaje");
 
       auth.signInWithEmailAndPassword(email, password)
-        .then(user => {
-          mensaje.textContent = "Inicio de sesión exitoso.";
+        .then((userCredential) => {
           mensaje.style.color = "green";
+          mensaje.innerText = "Bienvenido a Sahara Wear.";
+          setTimeout(() => {
+            window.location.href = "index.html";
+          }, 1000);
         })
-        .catch(error => {
-          mensaje.textContent = "Error: " + error.message;
-          mensaje.style.color = "red";
+        .catch((error) => {
+          mensaje.innerText = "Correo o contraseña incorrectos.";
         });
     }
   </script>
