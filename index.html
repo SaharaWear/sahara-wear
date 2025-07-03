@@ -23,12 +23,23 @@
       height: 100vh;
     }
 
-    .icon-top {
+    header {
       position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 2rem;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .icon-button {
+      font-size: 1.8rem;
       color: #111;
+      cursor: pointer;
     }
 
     .login-container {
@@ -104,19 +115,14 @@
       text-decoration: none;
       font-weight: bold;
     }
-
-    .icon {
-      font-size: 50px;
-      color: #111;
-      margin-bottom: 10px;
-    }
   </style>
 </head>
 <body>
 
-  <div class="icon-top">
-    <i class="fas fa-user-circle"></i>
-  </div>
+  <header>
+    <i class="fas fa-shopping-cart icon-button" title="Carrito"></i>
+    <i class="fas fa-user-circle icon-button" title="Iniciar sesión"></i>
+  </header>
 
   <div class="login-container">
     <h2>INICIAR SESIÓN</h2>
@@ -159,7 +165,6 @@
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           alert("Inicio de sesión exitoso");
-          // Redirige o muestra contenido según tu lógica
         })
         .catch((error) => {
           alert("Error: " + error.message);
