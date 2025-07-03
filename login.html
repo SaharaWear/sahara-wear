@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Iniciar sesión - Sahara Wear</title>
+</head>
+<body>
+  <h1>Iniciar sesión</h1>
+  <form onsubmit="login(); return false;">
+    <input type="email" id="email" placeholder="Correo" required><br>
+    <input type="password" id="password" placeholder="Contraseña" required><br>
+    <button type="submit">Ingresar</button>
+  </form>
+  <p id="mensaje"></p>
+
+  <!-- Firebase App (SDK) -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+
+  <script>
+    // Configuración de Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyDFDRc-_4nnGwqa6lMN-eXQ_ZhbjOB_EBd4",
+      authDomain: "sahara-wear.firebaseapp.com",
+      projectId: "sahara-wear",
+      storageBucket: "sahara-wear.appspot.com",
+      messagingSenderId: "555135188662",
+      appId: "1:555135188662:web:85bd56a1de51d533d8897"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const mensaje = document.getElementById("mensaje");
+
+      auth.signInWithEmailAndPassword(email, password)
+        .then(user => {
+          mensaje.textContent = "Inicio de sesión exitoso.";
+          mensaje.style.color = "green";
+        })
+        .catch(error => {
+          mensaje.textContent = "Error: " + error.message;
+          mensaje.style.color = "red";
+        });
+    }
+  </script>
+</body>
+</html>
