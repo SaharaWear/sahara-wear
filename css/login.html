@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Sahara Wear</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <input type="email" id="email" placeholder="Correo electrónico" required>
+    <input type="password" id="password" placeholder="Contraseña" required>
+    <button onclick="login()">Entrar</button>
+
+    <p>¿No tienes cuenta?</p>
+    <button onclick="register()">Registrarme</button>
+    <p id="mensaje"></p>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDFDRc_4nnGwqa6lMN-eXQ_ZhbjOB_EBd4",
+      authDomain: "sahara-wear.firebaseapp.com",
+      projectId: "sahara-wear",
+      storageBucket: "sahara-wear.appspot.com",
+      messagingSenderId: "555135188662",
+      appId: "1:555135188662:web:85bd656a1de51d533d8897"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <script src="js/login.js"></script>
+</body>
+</html>
