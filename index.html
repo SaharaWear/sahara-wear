@@ -1,62 +1,133 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sahara Wear - Ropa deportiva hecha en Colombia">
-  <title>Sahara Wear</title>
-  <link rel="stylesheet" href="css/estilos.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header class="header">
-    <div class="logo">Sahara Wear</div>
-    <nav class="menu">
-      <a href="#inicio">Inicio</a>
-      <a href="#productos">Productos</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sahara Wear</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+      }
+      body, html {
+        height: 100%;
+        width: 100%;
+        color: #fff;
+        scroll-behavior: smooth;
+      }
+      video.bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+      .overlay {
+        background-color: rgba(48, 26, 18, 0.7);
+        min-height: 100vh;
+        padding: 2rem;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+      }
+      nav a {
+        margin-left: 1.5rem;
+        color: #f4e3d7;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        color: #dfa878;
+        margin-bottom: 1rem;
+      }
+      p.sub {
+        text-align: center;
+        color: #f4e3d7;
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+      }
+      .btn {
+        display: inline-block;
+        background-color: #a65c34;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 1rem;
+        text-decoration: none;
+        font-weight: 600;
+        margin: auto;
+      }
+      section {
+        margin-top: 4rem;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 1rem;
+      }
+      footer {
+        margin-top: 3rem;
+        font-size: 0.9rem;
+        text-align: center;
+        color: #e7d5ca;
+      }
+      .links a {
+        display: block;
+        color: #f4e3d7;
+        margin-bottom: 0.5rem;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <video autoplay muted loop class="bg-video">
+      <source src="https://cdn.pixabay.com/video/2024/03/12/203543-917095130_large.mp4" type="video/mp4" />
+      Tu navegador no soporta video HTML5.
+    </video>
 
-  <section id="inicio" class="hero">
-    <h1>Viste con Poder. Viste Sahara.</h1>
-    <p>Ropa deportiva de alta calidad hecha en Colombia</p>
-    <a href="#productos" class="btn">Ver productos</a>
-  </section>
+    <div class="overlay">
+      <header>
+        <h2>Sahara Wear</h2>
+        <nav>
+          <a href="#inicio">Inicio</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </header>
 
-  <section id="productos" class="productos">
-    <h2>Nuestros Productos</h2>
-    <div class="grid-productos">
-      <div class="producto">
-        <img src="https://via.placeholder.com/300x400" alt="Producto 1">
-        <h3>Top Deportivo Sahara</h3>
-        <p>$49.900</p>
-        <a href="producto.html" class="btn-mini">Ver más</a>
-      </div>
-      <div class="producto">
-        <img src="https://via.placeholder.com/300x400" alt="Producto 2">
-        <h3>Leggins de Compresión</h3>
-        <p>$89.900</p>
-        <a href="producto.html" class="btn-mini">Ver más</a>
-      </div>
+      <main id="inicio">
+        <h1>Viste con Poder. Viste Sahara.</h1>
+        <p class="sub">Ropa deportiva de alta calidad hecha en Colombia</p>
+        <a href="#productos" class="btn">Ver productos</a>
+      </main>
+
+      <section id="nosotros">
+        <h2>Nosotros</h2>
+        <p>
+          En Sahara Wear creemos en el poder de vestir con confianza,
+          apoyamos el talento colombiano y diseñamos prendas con calidad, estilo y pasión.
+        </p>
+      </section>
+
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <div class="links">
+          <a href="mailto:saharawear@hotmail.com">📧 saharawear@hotmail.com</a>
+          <a href="https://www.instagram.com/sahara__wear" target="_blank">📸 Instagram</a>
+          <a href="https://www.facebook.com/share/16CR9DFW3t" target="_blank">📘 Facebook</a>
+        </div>
+      </section>
+
+      <footer>
+        © 2025 Sahara Wear - Todos los derechos reservados
+      </footer>
     </div>
-  </section>
-
-  <section id="nosotros" class="nosotros">
-    <h2>Sobre Nosotros</h2>
-    <p>En Sahara Wear creemos en el poder de vestir con confianza. Apoyamos el talento colombiano y diseñamos prendas con calidad, estilo y pasión.</p>
-  </section>
-
-  <section id="contacto" class="contacto">
-    <h2>Contacto</h2>
-    <p>¿Tienes dudas o quieres distribuir nuestra marca? Escríbenos a <strong>saharawear@correo.com</strong></p>
-  </section>
-
-  <footer class="footer">
-    <p>&copy; 2025 Sahara Wear. Todos los derechos reservados.</p>
-  </footer>
-</body>
+  </body>
 </html>
