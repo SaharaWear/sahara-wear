@@ -1,61 +1,70 @@
-iimport React from "react";
-import { Button } from "@/components/ui/button";
+"use client";
+
+import React from "react";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-r from-black to-zinc-900 text-white">
-      <section className="text-center py-32 px-4">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">
-          Viste con Poder. Viste Sahara.
-        </h1>
-        <p className="text-lg md:text-xl mb-6">
-          Ropa deportiva de alta calidad hecha en Colombia
-        </p>
-        <Button className="bg-yellow-600 hover:bg-yellow-500 text-black font-semibold">
-          Ver productos
-        </Button>
-      </section>
+    <div className="bg-black text-white min-h-screen px-6 py-12">
+      {/* Encabezado */}
+      <header className="text-center mb-12">
+        <h1 className="text-5xl font-bold mb-4">Viste con poder.</h1>
+        <h2 className="text-3xl font-light text-orange-400">Viste Sahara.</h2>
+      </header>
 
-      <section className="bg-white text-black py-16 px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">Nuestros Productos</h2>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Aquí irán las tarjetas de productos reales más adelante */}
-          <div className="bg-white p-6 rounded-2xl shadow-md">
-            <div className="h-48 bg-zinc-200 rounded-xl mb-4"></div>
-            <h3 className="text-xl font-semibold mb-2">Sudadera Clásica</h3>
-            <p className="text-sm text-zinc-600 mb-2">Confección 100% colombiana</p>
-            <span className="font-bold text-lg">$120.000</span>
+      {/* Productos */}
+      <section className="mb-16">
+        <h2 className="text-2xl font-semibold mb-6 border-b border-gray-700 pb-2">Nuestros Productos</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="bg-neutral-900 p-4 rounded-xl shadow-md">
+            <h3 className="text-xl font-bold mb-2">Sudadera Clásica</h3>
+            <p>Confección 100% colombiana</p>
+            <p className="text-orange-400 mt-2">$120.000</p>
           </div>
-          <div className="bg-white p-6 rounded-2xl shadow-md">
-            <div className="h-48 bg-zinc-200 rounded-xl mb-4"></div>
-            <h3 className="text-xl font-semibold mb-2">Top Deportivo</h3>
-            <p className="text-sm text-zinc-600 mb-2">Diseño cómodo y versátil</p>
-            <span className="font-bold text-lg">$65.000</span>
+          <div className="bg-neutral-900 p-4 rounded-xl shadow-md">
+            <h3 className="text-xl font-bold mb-2">Top Deportivo</h3>
+            <p>Diseño cómodo y versátil</p>
+            <p className="text-orange-400 mt-2">$65.000</p>
           </div>
-          <div className="bg-white p-6 rounded-2xl shadow-md">
-            <div className="h-48 bg-zinc-200 rounded-xl mb-4"></div>
-            <h3 className="text-xl font-semibold mb-2">Leggins Sahara Fit</h3>
-            <p className="text-sm text-zinc-600 mb-2">Resistentes y con estilo</p>
-            <span className="font-bold text-lg">$90.000</span>
+          <div className="bg-neutral-900 p-4 rounded-xl shadow-md">
+            <h3 className="text-xl font-bold mb-2">Leggins Sahara Fit</h3>
+            <p>Resistentes y con estilo</p>
+            <p className="text-orange-400 mt-2">$90.000</p>
           </div>
         </div>
       </section>
 
-      <section className="bg-zinc-100 py-16 px-4">
-        <h2 className="text-3xl font-bold text-center mb-6">Nosotros</h2>
-        <p className="max-w-3xl mx-auto text-center text-lg text-zinc-800">
-          En Sahara Wear creemos en el poder de vestir con confianza, apoyamos el talento colombiano y diseñamos prendas con calidad, estilo y pasión.
+      {/* Nosotros */}
+      <section className="mb-16">
+        <h2 className="text-2xl font-semibold mb-4 border-b border-gray-700 pb-2">Nosotros</h2>
+        <p className="text-lg leading-relaxed">
+          En <strong>Sahara Wear</strong> creemos en el poder de vestir con confianza, apoyamos el talento colombiano y diseñamos prendas con calidad, estilo y pasión.
         </p>
       </section>
 
-      <section className="bg-zinc-900 text-white py-16 px-4">
-        <h2 className="text-3xl font-bold text-center mb-6">Contacto</h2>
-        <div className="text-center space-y-3">
-          <p>Correo: <a href="mailto:saharawear@hotmail.com" className="underline">saharawear@hotmail.com</a></p>
-          <p>Instagram: <a href="https://www.instagram.com/sahara__wear" className="underline" target="_blank">@sahara__wear</a></p>
-          <p>Facebook: <a href="https://www.facebook.com/share/16CR9DFW3t" className="underline" target="_blank">fb.com/share/16CR9DFW3t</a></p>
-        </div>
+      {/* Contacto */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-4 border-b border-gray-700 pb-2">Contacto</h2>
+        <ul className="space-y-2 text-lg">
+          <li>
+            📧 Correo:{" "}
+            <a href="mailto:saharawear@hotmail.com" className="text-orange-400 underline">
+              saharawear@hotmail.com
+            </a>
+          </li>
+          <li>
+            📸 Instagram:{" "}
+            <a href="https://www.instagram.com/sahara__wear" className="text-orange-400 underline">
+              @sahara__wear
+            </a>
+          </li>
+          <li>
+            📘 Facebook:{" "}
+            <a href="https://www.facebook.com/share/16CR9DFW3t" className="text-orange-400 underline">
+              facebook.com/share/16CR9DFW3t
+            </a>
+          </li>
+        </ul>
       </section>
-    </main>
+    </div>
   );
 }
