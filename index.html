@@ -2,74 +2,89 @@ import React from "react";
 
 export default function Home() {
   return (
-    <div className="w-full overflow-x-hidden font-sans">
-      {/* Sección Hero con video de fondo */}
-      <div className="relative w-full h-screen text-white">
-        <video
-          autoPlay
-          muted
-          loop
-          className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        >
-          <source
-            src="https://cdn.pixabay.com/video/2023/07/25/174397-846917983_large.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full bg-black/50 px-4">
-          <h1 className="text-4xl md:text-6xl font-bold text-white text-center">
-            Viste con Poder. Viste Sahara.
-          </h1>
-          <p className="mt-4 text-lg md:text-xl text-white text-center">
-            Ropa deportiva de alta calidad hecha en Colombia
-          </p>
-          <button className="mt-6 bg-white text-black font-semibold py-2 px-6 rounded-xl shadow-md">
-            Ver productos
-          </button>
-        </div>
+    <div className="relative w-full min-h-screen text-white bg-black">
+      {/* Fondo con video como antes */}
+      <video
+        autoPlay
+        muted
+        loop
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+      >
+        <source
+          src="https://cdn.pixabay.com/video/2024/03/12/203543-917095130_large.mp4"
+          type="video/mp4"
+        />
+        Tu navegador no soporta videos HTML5.
+      </video>
+
+      {/* Contenido principal */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen bg-black/60 px-4 py-20">
+        <h1 className="text-4xl md:text-6xl font-bold text-white text-center">
+          Viste con Poder. Viste Sahara.
+        </h1>
+        <p className="mt-4 text-lg md:text-xl text-[#f4e3d7] text-center">
+          Ropa deportiva de alta calidad hecha en Colombia
+        </p>
+        <button className="mt-6 bg-white hover:bg-gray-300 text-black font-semibold py-2 px-6 rounded-xl shadow-md">
+          Ver productos
+        </button>
       </div>
 
       {/* Sección de productos */}
-      <section id="productos" className="py-16 px-4 bg-white text-black">
+      <div className="relative z-10 bg-white text-black py-16 px-4 md:px-20">
         <h2 className="text-3xl font-bold text-center mb-10">Nuestros Productos</h2>
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className="bg-gray-100 p-6 rounded-xl shadow-md flex flex-col items-center">
-            <img src="/img/producto1.png" alt="Producto 1" className="w-32 h-32 object-contain mb-4" />
-            <h3 className="text-xl font-semibold text-center">Top Deportivo Sahara</h3>
+        <div className="grid md:grid-cols-2 gap-10">
+          {/* Producto 1 */}
+          <div className="bg-[#f4e3d7] p-6 rounded-xl shadow-md">
+            <img
+              src="/producto1.png"
+              alt="Producto 1"
+              className="w-full h-64 object-cover rounded-lg mb-4"
+            />
+            <h3 className="text-xl font-bold mb-2">Top Deportivo Sahara</h3>
             <p className="text-lg mb-4">$49.900</p>
-            <button className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
+            <button className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800">
               Ver más
             </button>
           </div>
-          <div className="bg-gray-100 p-6 rounded-xl shadow-md flex flex-col items-center">
-            <img src="/img/producto2.png" alt="Producto 2" className="w-32 h-32 object-contain mb-4" />
-            <h3 className="text-xl font-semibold text-center">Leggins de Compresión</h3>
+
+          {/* Producto 2 */}
+          <div className="bg-[#f4e3d7] p-6 rounded-xl shadow-md">
+            <img
+              src="/producto2.png"
+              alt="Producto 2"
+              className="w-full h-64 object-cover rounded-lg mb-4"
+            />
+            <h3 className="text-xl font-bold mb-2">Leggins de Compresión</h3>
             <p className="text-lg mb-4">$89.900</p>
-            <button className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
+            <button className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800">
               Ver más
             </button>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Sección Nosotros */}
-      <section id="nosotros" className="bg-gray-100 py-16 px-4 text-center text-black">
-        <h2 className="text-2xl font-bold mb-6">Sobre Nosotros</h2>
-        <p className="max-w-3xl mx-auto">
+      <div className="bg-[#1e1e1e] text-white py-16 px-4 md:px-20">
+        <h2 className="text-3xl font-bold mb-6 text-center">Sobre Nosotros</h2>
+        <p className="text-center max-w-2xl mx-auto">
           En Sahara Wear creemos en el poder de vestir con confianza, apoyamos el talento colombiano y diseñamos prendas con calidad, estilo y pasión.
         </p>
-      </section>
+      </div>
 
       {/* Sección Contacto */}
-      <section id="contacto" className="bg-gray-100 py-16 px-4 text-center text-black">
-        <h2 className="text-2xl font-bold mb-6">Contacto</h2>
-        <p className="max-w-2xl mx-auto">
-          Contáctanos en:<br />
-          Correo: saharawear@hotmail.com<br />
-          Instagram: <a href="https://www.instagram.com/sahara__wear" className="underline">@sahara__wear</a><br />
-          Facebook: <a href="https://www.facebook.com/share/16CR9DFW3t" className="underline">/sahara.wear</a>
-        </p>
-      </section>
+      <div className="bg-black text-white py-16 px-4 md:px-20">
+        <h2 className="text-3xl font-bold mb-6 text-center">Contáctanos</h2>
+        <ul className="text-center space-y-2">
+          <li>Correo: saharawear@hotmail.com</li>
+          <li>
+            Instagram: <a href="https://www.instagram.com/sahara__wear" className="underline">@sahara__wear</a>
+          </li>
+          <li>
+            Facebook: <a href="https://facebook.com/share/16CR9DFW3t" className="underline">facebook.com/sahara</a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
