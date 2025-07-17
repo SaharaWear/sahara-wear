@@ -1,90 +1,82 @@
 import React from "react";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="relative w-full min-h-screen text-white bg-black">
-      {/* Fondo con video como antes */}
-      <video
-        autoPlay
-        muted
-        loop
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-      >
-        <source
-          src="https://cdn.pixabay.com/video/2024/03/12/203543-917095130_large.mp4"
-          type="video/mp4"
-        />
-        Tu navegador no soporta videos HTML5.
-      </video>
-
-      {/* Contenido principal */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen bg-black/60 px-4 py-20">
-        <h1 className="text-4xl md:text-6xl font-bold text-white text-center">
+    <div className="bg-black text-white min-h-screen">
+      {/* Sección Hero */}
+      <div className="flex flex-col items-center justify-center text-center py-20 px-4 bg-[#1a1a1a]">
+        <h1 className="text-4xl md:text-6xl font-bold text-[#DFA878]">
           Viste con Poder. Viste Sahara.
         </h1>
-        <p className="mt-4 text-lg md:text-xl text-[#f4e3d7] text-center">
+        <p className="mt-4 text-lg md:text-xl text-[#f4e3d7]">
           Ropa deportiva de alta calidad hecha en Colombia
         </p>
-        <button className="mt-6 bg-white hover:bg-gray-300 text-black font-semibold py-2 px-6 rounded-xl shadow-md">
+        <button className="mt-6 bg-[#a65c34] hover:bg-[#8c4528] text-white font-semibold py-2 px-6 rounded-xl shadow-md">
           Ver productos
         </button>
       </div>
 
       {/* Sección de productos */}
-      <div className="relative z-10 bg-white text-black py-16 px-4 md:px-20">
-        <h2 className="text-3xl font-bold text-center mb-10">Nuestros Productos</h2>
-        <div className="grid md:grid-cols-2 gap-10">
+      <section className="py-16 px-4 bg-[#0d0d0d]">
+        <h2 className="text-3xl font-bold text-center mb-12 text-white">Nuestros Productos</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Producto 1 */}
-          <div className="bg-[#f4e3d7] p-6 rounded-xl shadow-md">
-            <img
+          <div className="bg-[#1a1a1a] rounded-xl overflow-hidden shadow-lg">
+            <Image
               src="/producto1.png"
-              alt="Producto 1"
-              className="w-full h-64 object-cover rounded-lg mb-4"
+              alt="Top Deportivo Sahara"
+              width={500}
+              height={300}
+              className="w-full object-cover"
             />
-            <h3 className="text-xl font-bold mb-2">Top Deportivo Sahara</h3>
-            <p className="text-lg mb-4">$49.900</p>
-            <button className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800">
-              Ver más
-            </button>
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2 text-[#f4e3d7]">Top Deportivo Sahara</h3>
+              <p className="text-[#e0c9b1] mb-4">$49.900</p>
+              <button className="bg-[#a65c34] hover:bg-[#8c4528] text-white py-2 px-4 rounded-xl">
+                Ver más
+              </button>
+            </div>
           </div>
 
           {/* Producto 2 */}
-          <div className="bg-[#f4e3d7] p-6 rounded-xl shadow-md">
-            <img
+          <div className="bg-[#1a1a1a] rounded-xl overflow-hidden shadow-lg">
+            <Image
               src="/producto2.png"
-              alt="Producto 2"
-              className="w-full h-64 object-cover rounded-lg mb-4"
+              alt="Leggins de Compresión"
+              width={500}
+              height={300}
+              className="w-full object-cover"
             />
-            <h3 className="text-xl font-bold mb-2">Leggins de Compresión</h3>
-            <p className="text-lg mb-4">$89.900</p>
-            <button className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800">
-              Ver más
-            </button>
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2 text-[#f4e3d7]">Leggins de Compresión</h3>
+              <p className="text-[#e0c9b1] mb-4">$79.900</p>
+              <button className="bg-[#a65c34] hover:bg-[#8c4528] text-white py-2 px-4 rounded-xl">
+                Ver más
+              </button>
+            </div>
+          </div>
+
+          {/* Producto 3 */}
+          <div className="bg-[#1a1a1a] rounded-xl overflow-hidden shadow-lg">
+            <Image
+              src="/producto3.png"
+              alt="Sudadera Sahara"
+              width={500}
+              height={300}
+              className="w-full object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold mb-2 text-[#f4e3d7]">Sudadera Sahara</h3>
+              <p className="text-[#e0c9b1] mb-4">$99.900</p>
+              <button className="bg-[#a65c34] hover:bg-[#8c4528] text-white py-2 px-4 rounded-xl">
+                Ver más
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* Sección Nosotros */}
-      <div className="bg-[#1e1e1e] text-white py-16 px-4 md:px-20">
-        <h2 className="text-3xl font-bold mb-6 text-center">Sobre Nosotros</h2>
-        <p className="text-center max-w-2xl mx-auto">
-          En Sahara Wear creemos en el poder de vestir con confianza, apoyamos el talento colombiano y diseñamos prendas con calidad, estilo y pasión.
-        </p>
-      </div>
-
-      {/* Sección Contacto */}
-      <div className="bg-black text-white py-16 px-4 md:px-20">
-        <h2 className="text-3xl font-bold mb-6 text-center">Contáctanos</h2>
-        <ul className="text-center space-y-2">
-          <li>Correo: saharawear@hotmail.com</li>
-          <li>
-            Instagram: <a href="https://www.instagram.com/sahara__wear" className="underline">@sahara__wear</a>
-          </li>
-          <li>
-            Facebook: <a href="https://facebook.com/share/16CR9DFW3t" className="underline">facebook.com/sahara</a>
-          </li>
-        </ul>
-      </div>
+      </section>
     </div>
   );
 }
