@@ -1,70 +1,62 @@
-"use client";
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sahara Wear - Ropa deportiva hecha en Colombia">
+  <title>Sahara Wear</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Sahara Wear</div>
+    <nav class="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
 
-import React from "react";
+  <section id="inicio" class="hero">
+    <h1>Viste con Poder. Viste Sahara.</h1>
+    <p>Ropa deportiva de alta calidad hecha en Colombia</p>
+    <a href="#productos" class="btn">Ver productos</a>
+  </section>
 
-export default function Home() {
-  return (
-    <div className="bg-black text-white min-h-screen px-6 py-12">
-      {/* Encabezado */}
-      <header className="text-center mb-12">
-        <h1 className="text-5xl font-bold mb-4">Viste con poder.</h1>
-        <h2 className="text-3xl font-light text-orange-400">Viste Sahara.</h2>
-      </header>
-
-      {/* Productos */}
-      <section className="mb-16">
-        <h2 className="text-2xl font-semibold mb-6 border-b border-gray-700 pb-2">Nuestros Productos</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-neutral-900 p-4 rounded-xl shadow-md">
-            <h3 className="text-xl font-bold mb-2">Sudadera Clásica</h3>
-            <p>Confección 100% colombiana</p>
-            <p className="text-orange-400 mt-2">$120.000</p>
-          </div>
-          <div className="bg-neutral-900 p-4 rounded-xl shadow-md">
-            <h3 className="text-xl font-bold mb-2">Top Deportivo</h3>
-            <p>Diseño cómodo y versátil</p>
-            <p className="text-orange-400 mt-2">$65.000</p>
-          </div>
-          <div className="bg-neutral-900 p-4 rounded-xl shadow-md">
-            <h3 className="text-xl font-bold mb-2">Leggins Sahara Fit</h3>
-            <p>Resistentes y con estilo</p>
-            <p className="text-orange-400 mt-2">$90.000</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Nosotros */}
-      <section className="mb-16">
-        <h2 className="text-2xl font-semibold mb-4 border-b border-gray-700 pb-2">Nosotros</h2>
-        <p className="text-lg leading-relaxed">
-          En <strong>Sahara Wear</strong> creemos en el poder de vestir con confianza, apoyamos el talento colombiano y diseñamos prendas con calidad, estilo y pasión.
-        </p>
-      </section>
-
-      {/* Contacto */}
-      <section>
-        <h2 className="text-2xl font-semibold mb-4 border-b border-gray-700 pb-2">Contacto</h2>
-        <ul className="space-y-2 text-lg">
-          <li>
-            📧 Correo:{" "}
-            <a href="mailto:saharawear@hotmail.com" className="text-orange-400 underline">
-              saharawear@hotmail.com
-            </a>
-          </li>
-          <li>
-            📸 Instagram:{" "}
-            <a href="https://www.instagram.com/sahara__wear" className="text-orange-400 underline">
-              @sahara__wear
-            </a>
-          </li>
-          <li>
-            📘 Facebook:{" "}
-            <a href="https://www.facebook.com/share/16CR9DFW3t" className="text-orange-400 underline">
-              facebook.com/share/16CR9DFW3t
-            </a>
-          </li>
-        </ul>
-      </section>
+  <section id="productos" class="productos">
+    <h2>Nuestros Productos</h2>
+    <div class="grid-productos">
+      <div class="producto">
+        <img src="https://via.placeholder.com/300x400" alt="Producto 1">
+        <h3>Top Deportivo Sahara</h3>
+        <p>$49.900</p>
+        <a href="producto.html" class="btn-mini">Ver más</a>
+      </div>
+      <div class="producto">
+        <img src="https://via.placeholder.com/300x400" alt="Producto 2">
+        <h3>Leggins de Compresión</h3>
+        <p>$89.900</p>
+        <a href="producto.html" class="btn-mini">Ver más</a>
+      </div>
     </div>
-  );
-}
+  </section>
+
+  <section id="nosotros" class="nosotros">
+    <h2>Sobre Nosotros</h2>
+    <p>En Sahara Wear creemos en el poder de vestir con confianza. Apoyamos el talento colombiano y diseñamos prendas con calidad, estilo y pasión.</p>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <h2>Contacto</h2>
+    <p>¿Tienes dudas o quieres distribuir nuestra marca? Escríbenos a <strong>saharawear@correo.com</strong></p>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Sahara Wear. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
